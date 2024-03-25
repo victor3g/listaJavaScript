@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Intercalar Palavras</title>
+<script>
+function intercalarPalavras() {
+    var palavra1 = document.getElementById("palavra1").value;
+    var palavra2 = document.getElementById("palavra2").value;
+    var resultado = "";
+
+    var comprimento = Math.max(palavra1.length, palavra2.length);
+    for (var i = 0; i < comprimento; i++) {
+        if (i < palavra1.length) {
+            resultado += palavra1[i];
+        }
+        if (i < palavra2.length) {
+            resultado += palavra2[i];
+        }
+    }
+
+    document.getElementById("resultado").value = resultado;
+}
+</script>
+</head>
+<body>
+
+<form>
+    <label for="palavra1">Palavra 1:</label>
+    <input type="text" id="palavra1" name="palavra1"><br><br>
+    
+    <label for="palavra2">Palavra 2:</label>
+    <input type="text" id="palavra2" name="palavra2"><br><br>
+
+    <label for="resultado">Resultado:</label>
+    <input type="text" id="resultado" name="resultado" readonly><br><br>
+
+    <input type="button" value="Intercalar" onclick="intercalarPalavras()">
+</form>
+
+</body>
+</html>
